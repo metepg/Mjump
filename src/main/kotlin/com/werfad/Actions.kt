@@ -33,7 +33,7 @@ abstract class BaseAction(private val handler: TypedActionHandler) : DumbAwareAc
     abstract fun getMode(): JumpMode
 }
 
-class KJumpAction : BaseAction(JumpHandler) {
+class Char1Action : BaseAction(JumpHandler) {
     override fun getMode() = JumpMode.CHAR1
 }
 

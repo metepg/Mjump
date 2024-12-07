@@ -12,7 +12,7 @@
     </extensions>
 
     <actions>
-        <action id="KJumpAction" class="com.werfad.KJumpAction" text="KJump"
+        <action id="KJumpAction.Char1" class="com.werfad.Char1Action" text="KJump Char 1"
                 description="Input 1 character and jump to any same character."/>
         <action id="KJumpAction.Char2" class="com.werfad.Char2Action" text="KJump Char 2"
                 description="Input 2 character and jump to any same character."/>
