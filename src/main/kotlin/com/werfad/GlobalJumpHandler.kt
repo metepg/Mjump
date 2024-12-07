@@ -7,8 +7,8 @@ import com.intellij.openapi.editor.Caret
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.actionSystem.*
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory
+import com.intellij.openapi.util.TextRange
 import com.werfad.finder.*
-import com.werfad.utils.getVisibleRangeOffset
 
 object GlobalJumpHandler : TypedActionHandler {
     private var mOldTypedHandler: TypedActionHandler? = null
@@ -114,14 +114,13 @@ object GlobalJumpHandler : TypedActionHandler {
         typedAction.setupRawHandler(this)
         mOldEscActionHandler = manager.getActionHandler(IdeActions.ACTION_EDITOR_ESCAPE)
         manager.setActionHandler(IdeActions.ACTION_EDITOR_ESCAPE, escActionHandler)
-        val visibleBorderOffset = editor.getVisibleRangeOffset()
-        val visibleString = editor.document.getText(visibleBorderOffset)
         finder = when (mode) {
             JumpMode.WORD0 -> GlobalWord0Finder()
             JumpMode.LINE -> GlobalLineFinder()
+            JumpMode.CHAR1 -> GlobalChar1Finder()
             else -> throw RuntimeException("Invalid start mode: $mode")
         }
-        val marks = finder.start(editor, visibleString, visibleBorderOffset)
+        val marks = finder.start(editor, "", TextRange.EMPTY_RANGE)
         if (marks != null) {
             lastMarks = marks
             jumpOrShowCanvas(lastMarks)

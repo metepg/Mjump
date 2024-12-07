@@ -57,6 +57,10 @@ class GotoDeclarationWord1Action : BaseAction(JumpHandler) {
     override fun getMode() = JumpMode.WORD1_DECLARATION
 }
 
+class GlobalChar1 : BaseAction(GlobalJumpHandler) {
+    override fun getMode() = JumpMode.CHAR1
+}
+
 class GlobalWord0Action : BaseAction(GlobalJumpHandler) {
     override fun getMode() = JumpMode.WORD0
 }
