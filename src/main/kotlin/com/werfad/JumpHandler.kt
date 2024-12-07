@@ -15,13 +15,6 @@ import com.werfad.finder.*
 import com.werfad.utils.getVisibleRangeOffset
 
 object JumpHandler : TypedActionHandler {
-    const val MODE_CHAR1 = 0
-    const val MODE_CHAR2 = 1
-    const val MODE_WORD0 = 2
-    const val MODE_WORD1 = 3
-    const val MODE_LINE = 4
-    const val MODE_WORD1_DECLARATION = 5
-
     private var mOldTypedHandler: TypedActionHandler? = null
     private var mOldEscActionHandler: EditorActionHandler? = null
     private val mMarksCanvas: MarksCanvas by lazy { MarksCanvas() }
@@ -96,9 +89,9 @@ object JumpHandler : TypedActionHandler {
     /**
      * start search mode
      *
-     * @param mode mode enum, see [.MODE_CHAR1] [.MODE_CHAR2] etc
+     * @param mode mode enum, see JumpMode.kt
      */
-    fun start(mode: Int, anActionEvent: AnActionEvent) {
+    fun start(mode: JumpMode, anActionEvent: AnActionEvent) {
         if (isStart) return
         isStart = true
         val editor = anActionEvent.getData(CommonDataKeys.EDITOR) ?: return
@@ -110,12 +103,12 @@ object JumpHandler : TypedActionHandler {
         manager.setActionHandler(IdeActions.ACTION_EDITOR_ESCAPE, escActionHandler)
         onJump = null
         when (mode) {
-            MODE_CHAR1 -> finder = Char1Finder()
-            MODE_CHAR2 -> finder = Char2Finder()
-            MODE_WORD0 -> finder = Word0Finder()
-            MODE_WORD1 -> finder = Word1Finder()
-            MODE_LINE -> finder = LineFinder()
-            MODE_WORD1_DECLARATION -> {
+            JumpMode.CHAR1 -> finder = Char1Finder()
+            JumpMode.CHAR2 -> finder = Char2Finder()
+            JumpMode.WORD0 -> finder = Word0Finder()
+            JumpMode.WORD1 -> finder = Word1Finder()
+            JumpMode.LINE -> finder = LineFinder()
+            JumpMode.WORD1_DECLARATION -> {
                 finder = Word1Finder()
                 onJump = {
                     ActionManager
@@ -124,7 +117,6 @@ object JumpHandler : TypedActionHandler {
                         .actionPerformed(anActionEvent)
                 }
             }
-            else -> throw RuntimeException("Invalid start mode: $mode")
         }
         val visibleBorderOffset = editor.getVisibleRangeOffset()
         val visibleString = editor.document.getText(visibleBorderOffset)
