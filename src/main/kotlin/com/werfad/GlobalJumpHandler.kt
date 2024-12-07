@@ -118,6 +118,7 @@ object GlobalJumpHandler : TypedActionHandler {
         val visibleString = editor.document.getText(visibleBorderOffset)
         finder = when (mode) {
             JumpMode.WORD0 -> GlobalWord0Finder()
+            JumpMode.LINE -> GlobalLineFinder()
             else -> throw RuntimeException("Invalid start mode: $mode")
         }
         val marks = finder.start(editor, visibleString, visibleBorderOffset)
