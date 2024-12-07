@@ -8,24 +8,21 @@ import com.werfad.UserConfig
 import com.werfad.utils.findAll
 import kotlin.math.abs
 
-private const val STATE_WAIT_SEARCH_CHAR = 0
-private const val STATE_WAIT_KEY = 1
-
 class Char1Finder : Finder {
-    private var state = STATE_WAIT_SEARCH_CHAR
+    private lateinit var state: InputState
     private lateinit var s: String
     private lateinit var visibleRange: TextRange
 
     override fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark>? {
         this.s = s
         this.visibleRange = visibleRange
-        state = STATE_WAIT_SEARCH_CHAR
+        state = InputState.WAIT_SEARCH_CHAR1
         return null
     }
 
     override fun input(e: Editor, c: Char, lastMarks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark> {
         return when (state) {
-            STATE_WAIT_SEARCH_CHAR -> {
+            InputState.WAIT_SEARCH_CHAR1 -> {
                 val caretOffset = e.caretModel.offset
                 val offsets = s.findAll(c, c.isLowerCase())
                     .map { it + visibleRange.startOffset }
@@ -33,12 +30,12 @@ class Char1Finder : Finder {
                     .toList()
 
                 val tags = KeyTagsGenerator.createTagsTree(offsets.size, UserConfig.getDataBean().characters)
-                state = STATE_WAIT_KEY
+                state = InputState.WAIT_KEY
                 offsets.zip(tags)
                     .map { MarksCanvas.Mark(it.second, it.first) }
                     .toList()
             }
-            STATE_WAIT_KEY -> advanceMarks(c, lastMarks)
+            InputState.WAIT_KEY -> advanceMarks(c, lastMarks)
             else -> throw RuntimeException("Impossible.")
         }
     }
