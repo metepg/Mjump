@@ -115,9 +115,10 @@ object GlobalJumpHandler : TypedActionHandler {
         mOldEscActionHandler = manager.getActionHandler(IdeActions.ACTION_EDITOR_ESCAPE)
         manager.setActionHandler(IdeActions.ACTION_EDITOR_ESCAPE, escActionHandler)
         finder = when (mode) {
+            JumpMode.CHAR1 -> GlobalChar1Finder()
+            JumpMode.CHAR2 -> GlobalChar2Finder()
             JumpMode.WORD0 -> GlobalWord0Finder()
             JumpMode.LINE -> GlobalLineFinder()
-            JumpMode.CHAR1 -> GlobalChar1Finder()
             else -> throw RuntimeException("Invalid start mode: $mode")
         }
         val marks = finder.start(editor, "", TextRange.EMPTY_RANGE)

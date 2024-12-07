@@ -25,8 +25,10 @@
         <action id="KJumpAction.Word1GotoDeclaration" class="com.werfad.GotoDeclarationWord1Action"
                 text="KJump Word 1 Goto Declaration"
                 description="Input 1 character and jump to declaration of any word start with this character."/>
-        <action id="KJumpAction.GlobalChar1" class="com.werfad.GlobalChar1" text="KJump Global Char 1"
+        <action id="KJumpAction.GlobalChar1" class="com.werfad.GlobalChar1Action" text="KJump Global Char 1"
                 description="Input 1 character and jump to any same character across editors."/>
+        <action id="KJumpAction.GlobalChar2" class="com.werfad.GlobalChar2Action" text="KJump Global Char 2"
+                description="Input 2 characters and jump to any same character across editors."/>
         <action id="KJumpAction.GlobalWord0" class="com.werfad.GlobalWord0Action" text="KJump Global Word 0"
                 description="Jump to any word across all visible editors."/>
         <action id="KJumpAction.GlobalLine" class="com.werfad.GlobalLineAction" text="KJump Global Line"
