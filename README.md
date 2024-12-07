@@ -49,13 +49,18 @@ nmap <leader><leader>f :action KJumpAction.Word1<cr>
 
 ### Available Actions
 
-| Name         | Action            | Description                                                        |
-|--------------|-------------------|--------------------------------------------------------------------|
-| KJump        | KJumpAction       | Input 1 character and jump to any same character                   |
-| KJump Char 2 | KJumpAction.Char2 | Input 2 characters and jump to any matching position               |
-| KJump Word 0 | KJumpAction.Word0 | Jump to any word                                                   |
-| KJump Word 1 | KJumpAction.Word1 | Input 1 character and jump to any word starting with this character|
-| KJump Line   | KJumpAction.Line  | Jump to any line                                                   |
+| Name                | Action                  | Description                                                                        |
+|---------------------|-------------------------|------------------------------------------------------------------------------------|
+| KJump Char 1        | KJumpAction.Char1       | Input 1 character and jump to any same character                                   |
+| KJump Char 2        | KJumpAction.Char2       | Input 2 characters and jump to any matching position                               |
+| KJump Word 0        | KJumpAction.Word0       | Jump to any word                                                                   |
+| KJump Word 1        | KJumpAction.Word1       | Input 1 character and jump to any word starting with this character                |
+| KJump Line          | KJumpAction.Line        | Jump to any line                                                                   |
+| KJump Global Char 1 | KJumpAction.GlobalChar1 | Input 1 character and jump to any same character across editors                    |
+| KJump Global Char 2 | KJumpAction.GlobalChar2 | Input 2 characters and jump to any matching position across editors                |
+| KJump Global Word 0 | KJumpAction.GlobalWord0 | Jump to any word across editors                                                    |
+| KJump Global Word 1 | KJumpAction.GlobalWord1 | Input 1 character and jump to any word starting with this character across editors |
+| KJump Global Line   | KJumpAction.GlobalLine  | Jump to any line across editors                                                    |
 
 <!-- Plugin description end -->
 
@@ -63,6 +68,7 @@ nmap <leader><leader>f :action KJumpAction.Word1<cr>
 - Use Word0 for general word navigation
 - Use Char2 for more precise jumps
 - Line mode is great for long files
+- Use actions starting with `Global` to jump across editors
 - Combine with IdeaVim for the best experience
 
 ## Contributing
