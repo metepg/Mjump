@@ -14,10 +14,12 @@ abstract class BaseAction(private val handler: TypedActionHandler) : DumbAwareAc
 
     /**
      * JumpHandler is used for actions on the currently focused editor.
+     * GlobalJumpHandler is used for actions across all editors.
      */
     override fun actionPerformed(e: AnActionEvent) {
         when (handler) {
             is JumpHandler -> handler.start(getMode(), e)
+            is GlobalJumpHandler -> handler.start(getMode(), e)
             else -> {
                 throw IllegalArgumentException("Unsupported handler: ${handler::class}")
             }
@@ -53,4 +55,8 @@ class LineAction : BaseAction(JumpHandler) {
 
 class GotoDeclarationWord1Action : BaseAction(JumpHandler) {
     override fun getMode() = JumpMode.WORD1_DECLARATION
+}
+
+class GlobalWord0Action : BaseAction(GlobalJumpHandler) {
+    override fun getMode() = JumpMode.WORD0
 }
