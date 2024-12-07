@@ -118,6 +118,7 @@ object GlobalJumpHandler : TypedActionHandler {
             JumpMode.CHAR1 -> GlobalChar1Finder()
             JumpMode.CHAR2 -> GlobalChar2Finder()
             JumpMode.WORD0 -> GlobalWord0Finder()
+            JumpMode.WORD1 -> GlobalWord1Finder()
             JumpMode.LINE -> GlobalLineFinder()
             else -> throw RuntimeException("Invalid start mode: $mode")
         }

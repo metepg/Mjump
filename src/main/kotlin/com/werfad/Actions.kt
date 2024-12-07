@@ -69,6 +69,10 @@ class GlobalWord0Action : BaseAction(GlobalJumpHandler) {
     override fun getMode() = JumpMode.WORD0
 }
 
+class GlobalWord1Action : BaseAction(GlobalJumpHandler) {
+    override fun getMode() = JumpMode.WORD1
+}
+
 class GlobalLineAction : BaseAction(GlobalJumpHandler) {
     override fun getMode() = JumpMode.LINE
 }
