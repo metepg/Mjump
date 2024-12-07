@@ -1,11 +1,11 @@
-package com.werfad.finder
+package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.KeyTagsGenerator
-import com.werfad.MarksCanvas
-import com.werfad.UserConfig
-import com.werfad.utils.findAll
+import com.metepg.KeyTagsGenerator
+import com.metepg.MarksCanvas
+import com.metepg.UserConfig
+import com.metepg.utils.findAll
 import kotlin.math.abs
 
 class Char1Finder : Finder {

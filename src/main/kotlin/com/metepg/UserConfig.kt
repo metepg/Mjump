@@ -1,11 +1,11 @@
-package com.werfad
+package com.metepg
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
-import com.werfad.UserConfig.DataBean
+import com.metepg.UserConfig.DataBean
 
 @State(name = "KJump", storages = [Storage("KJump.xml")])
 class UserConfig : PersistentStateComponent<DataBean> {

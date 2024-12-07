@@ -1,10 +1,10 @@
-package com.werfad.finder
+package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.KeyTagsGenerator
-import com.werfad.MarksCanvas
-import com.werfad.UserConfig
+import com.metepg.KeyTagsGenerator
+import com.metepg.MarksCanvas
+import com.metepg.UserConfig
 import kotlin.math.abs
 
 private val pattern = Regex("(?i)\\b\\w")

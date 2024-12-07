@@ -1,4 +1,4 @@
-package com.werfad
+package com.metepg
 
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.command.CommandProcessor
@@ -11,8 +11,8 @@ import com.intellij.openapi.editor.actionSystem.EditorActionManager
 import com.intellij.openapi.editor.actionSystem.TypedAction
 import com.intellij.openapi.editor.actionSystem.TypedActionHandler
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory
-import com.werfad.finder.*
-import com.werfad.utils.getVisibleRangeOffset
+import com.metepg.finder.*
+import com.metepg.utils.getVisibleRangeOffset
 
 object JumpHandler : TypedActionHandler {
     private var mOldTypedHandler: TypedActionHandler? = null

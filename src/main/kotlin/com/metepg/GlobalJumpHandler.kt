@@ -1,4 +1,4 @@
-package com.werfad
+package com.metepg
 
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.command.CommandProcessor
@@ -8,7 +8,7 @@ import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.actionSystem.*
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory
 import com.intellij.openapi.util.TextRange
-import com.werfad.finder.*
+import com.metepg.finder.*
 
 object GlobalJumpHandler : TypedActionHandler {
     private var mOldTypedHandler: TypedActionHandler? = null

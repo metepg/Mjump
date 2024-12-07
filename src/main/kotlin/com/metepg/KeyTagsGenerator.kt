@@ -1,4 +1,4 @@
-package com.werfad
+package com.metepg
 
 object KeyTagsGenerator {
     // maybe has a math method

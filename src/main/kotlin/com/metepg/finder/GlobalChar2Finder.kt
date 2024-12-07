@@ -1,9 +1,9 @@
-package com.werfad.finder
+package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.MarksCanvas
-import com.werfad.utils.getMarksFromAllEditors
+import com.metepg.MarksCanvas
+import com.metepg.utils.getMarksFromAllEditors
 
 class GlobalChar2Finder : Finder {
     private lateinit var state: InputState

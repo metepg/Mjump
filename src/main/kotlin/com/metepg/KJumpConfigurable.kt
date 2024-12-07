@@ -1,7 +1,7 @@
-package com.werfad
+package com.metepg
 
 import com.intellij.openapi.options.Configurable
-import com.werfad.UserConfig.DataBean
+import com.metepg.UserConfig.DataBean
 import javax.swing.JComponent
 
 class KJumpConfigurable : Configurable {

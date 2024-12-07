@@ -1,4 +1,4 @@
-package com.werfad.finder
+package com.metepg.finder
 
 sealed class InputState(private val value: Int) {
     object WAIT_SEARCH_CHAR1: InputState(0)

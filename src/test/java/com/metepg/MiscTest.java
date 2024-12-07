@@ -1,4 +1,4 @@
-package com.werfad;
+package com.metepg;
 
 import org.junit.Test;
 

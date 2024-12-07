@@ -1,4 +1,4 @@
-package com.werfad
+package com.metepg
 
 import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnActionEvent

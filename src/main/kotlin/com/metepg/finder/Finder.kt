@@ -1,8 +1,8 @@
-package com.werfad.finder
+package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.werfad.MarksCanvas
+import com.metepg.MarksCanvas
 
 interface Finder {
     /**

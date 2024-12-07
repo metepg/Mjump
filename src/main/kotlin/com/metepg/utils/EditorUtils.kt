@@ -1,4 +1,4 @@
-package com.werfad.utils
+package com.metepg.utils
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.LogicalPosition

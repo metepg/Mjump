@@ -1,10 +1,10 @@
-package com.werfad
+package com.metepg
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.colors.EditorFontType
 import com.intellij.ui.JBColor
-import com.werfad.UserConfig.DataBean
-import com.werfad.utils.offsetToXYCompat
+import com.metepg.UserConfig.DataBean
+import com.metepg.utils.offsetToXYCompat
 import java.awt.*
 import javax.swing.JComponent
 

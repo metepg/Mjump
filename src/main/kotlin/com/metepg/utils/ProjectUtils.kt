@@ -1,11 +1,11 @@
-package com.werfad.utils
+package com.metepg.utils
 
 import com.intellij.openapi.fileEditor.TextEditor
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx
 import com.intellij.openapi.project.Project
-import com.werfad.KeyTagsGenerator
-import com.werfad.MarksCanvas
-import com.werfad.UserConfig
+import com.metepg.KeyTagsGenerator
+import com.metepg.MarksCanvas
+import com.metepg.UserConfig
 import kotlin.math.abs
 
 /**

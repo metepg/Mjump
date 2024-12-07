@@ -1,4 +1,4 @@
-package com.werfad
+package com.metepg
 
 sealed class JumpMode(private val value: Int) {
     object CHAR1: JumpMode(0)
