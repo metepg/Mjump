@@ -2,23 +2,14 @@ package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.util.TextRange
-import com.metepg.KeyTagsGenerator
 import com.metepg.MarksCanvas
-import com.metepg.UserConfig
-import com.metepg.UserConfig.DataBean
-import com.metepg.utils.findAll
-import kotlin.math.abs
+import com.metepg.utils.getMarksFromAllEditors
 
 class Char2Finder : Finder {
     private lateinit var state: InputState
-    private val config: DataBean = UserConfig.getDataBean()
-    private lateinit var s: String
-    private lateinit var visibleRange: TextRange
-    private var firstChar = ' '
+    private var firstChar: Char? = null
 
     override fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark>? {
-        this.s = s
-        this.visibleRange = visibleRange
         state = InputState.WAIT_SEARCH_CHAR1
         return null
     }
@@ -31,18 +22,10 @@ class Char2Finder : Finder {
                 null
             }
             InputState.WAIT_SEARCH_CHAR2 -> {
-                val caretOffset = e.caretModel.offset
-                val find = "" + firstChar + c
-                val offsets = s.findAll(find, find.all { it.isLowerCase() })
-                    .map { it + visibleRange.startOffset }
-                    .sortedBy { abs(it - caretOffset) }
-                    .toList()
-
-                val tags = KeyTagsGenerator.createTagsTree(offsets.size, config.characters)
+                val first = firstChar ?: throw IllegalStateException("First character is not set.")
+                val pattern = Regex(Regex.escape("$first$c"), RegexOption.IGNORE_CASE)
                 state = InputState.WAIT_KEY
-                offsets.zip(tags)
-                    .map { MarksCanvas.Mark(it.second, it.first) }
-                    .toList()
+                e.project.getMarksFromAllEditors(pattern)
             }
             InputState.WAIT_KEY -> advanceMarks(c, lastMarks)
         }

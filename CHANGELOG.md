@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# KJump Changelog
+# MJump Changelog
 
 ## [Unreleased]
 ### Added

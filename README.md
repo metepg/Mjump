@@ -1,11 +1,19 @@
-# KJump
-
-[![Build](https://github.com/a690700752/KJump/workflows/Build/badge.svg)](https://github.com/a690700752/KJump/actions/workflows/build.yml)
-[![Version](https://img.shields.io/jetbrains/plugin/v/15097-kjump.svg)](https://plugins.jetbrains.com/plugin/15097-kjump)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/15097-kjump.svg)](https://plugins.jetbrains.com/plugin/15097-kjump)
+# MJump
 
 <!-- Plugin description -->
-A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. KJump enhances your code navigation experience by providing quick jump capabilities to characters, words, and lines. It seamlessly integrates with IdeaVim for a more natural Vim-like experience.
+A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. MJump enhances your code navigation experience by providing quick jump capabilities to characters, words, and lines. It seamlessly integrates with IdeaVim for a more natural Vim-like experience.
+
+[//]: # ([![Build]&#40;https://github.com/metepg/MJump/workflows/Build/badge.svg&#41;]&#40;https://github.com/a690700752/MJump/actions/workflows/build.yml&#41;)
+
+[//]: # ([![Version]&#40;https://img.shields.io/jetbrains/plugin/v/15097-MJump.svg&#41;]&#40;https://plugins.jetbrains.com/plugin/15097-MJump&#41;)
+
+[//]: # ([![Downloads]&#40;https://img.shields.io/jetbrains/plugin/d/15097-MJump.svg&#41;]&#40;https://plugins.jetbrains.com/plugin/15097-MJump&#41;)
+
+# IMPORTANT!
+- This is not my plugin. All rights and credit belong to github user `a690700752` for this amazing plugin.
+- The original repository is at `https://github.com/a690700752/KJump` and is still maintained.
+- I only use this plugin as a starter template for my own learning.
+- Currently the only difference to KJump is that MJump is able to do the jumping across all open editors.
 
 ## Features
 
@@ -15,19 +23,19 @@ A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. KJum
 - IdeaVim integration: Works seamlessly with IdeaVim
 - Minimal keystrokes: Reach your target with just a few keystrokes
 
-## Installation
+## Installation (not implemented yet)
 
 1. Open your JetBrains IDE
 2. Go to `Settings/Preferences → Plugins`
 3. Click on `Marketplace`
-4. Search for "KJump"
+4. Search for "MJump"
 5. Click `Install`
 
 ## Usage
 
 ### Keyboard Shortcuts
-There are no default activated shortcuts. You can assign KJump activation shortcuts in:
-`Settings → Keymap → KJump`
+There are no default activated shortcuts. You can assign MJump activation shortcuts in:
+`Settings → Keymap → MJump`
 
 Common shortcut suggestions:
 - `Ctrl+,` for character jump
@@ -38,29 +46,24 @@ Add the following commands to your `~/.ideavimrc`:
 
 ```vimrc
 " Basic jumps
-nmap <leader><leader>s :action KJumpAction<cr>
-nmap <leader><leader>w :action KJumpAction.Word0<cr>
-nmap <leader><leader>l :action KJumpAction.Line<cr>
+nmap <leader><leader>s :action MJumpAction<cr>
+nmap <leader><leader>w :action MJumpAction.Word0<cr>
+nmap <leader><leader>l :action MJumpAction.Line<cr>
 
 " Additional jumps
-nmap <leader><leader>c :action KJumpAction.Char2<cr>
-nmap <leader><leader>f :action KJumpAction.Word1<cr>
+nmap <leader><leader>c :action MJumpAction.Char2<cr>
+nmap <leader><leader>f :action MJumpAction.Word1<cr>
 ```
 
 ### Available Actions
 
 | Name                | Action                  | Description                                                                        |
 |---------------------|-------------------------|------------------------------------------------------------------------------------|
-| KJump Char 1        | KJumpAction.Char1       | Input 1 character and jump to any same character                                   |
-| KJump Char 2        | KJumpAction.Char2       | Input 2 characters and jump to any matching position                               |
-| KJump Word 0        | KJumpAction.Word0       | Jump to any word                                                                   |
-| KJump Word 1        | KJumpAction.Word1       | Input 1 character and jump to any word starting with this character                |
-| KJump Line          | KJumpAction.Line        | Jump to any line                                                                   |
-| KJump Global Char 1 | KJumpAction.GlobalChar1 | Input 1 character and jump to any same character across editors                    |
-| KJump Global Char 2 | KJumpAction.GlobalChar2 | Input 2 characters and jump to any matching position across editors                |
-| KJump Global Word 0 | KJumpAction.GlobalWord0 | Jump to any word across editors                                                    |
-| KJump Global Word 1 | KJumpAction.GlobalWord1 | Input 1 character and jump to any word starting with this character across editors |
-| KJump Global Line   | KJumpAction.GlobalLine  | Jump to any line across editors                                                    |
+| MJump Char 1        | MJumpAction.Char1       | Input 1 character and jump to any same character                                   |
+| MJump Char 2        | MJumpAction.Char2       | Input 2 characters and jump to any matching position                               |
+| MJump Word 0        | MJumpAction.Word0       | Jump to any word                                                                   |
+| MJump Word 1        | MJumpAction.Word1       | Input 1 character and jump to any word starting with this character                |
+| MJump Line          | MJumpAction.Line        | Jump to any line                                                                   |
 
 <!-- Plugin description end -->
 
@@ -68,7 +71,6 @@ nmap <leader><leader>f :action KJumpAction.Word1<cr>
 - Use Word0 for general word navigation
 - Use Char2 for more precise jumps
 - Line mode is great for long files
-- Use actions starting with `Global` to jump across editors
 - Combine with IdeaVim for the best experience
 
 ## Contributing

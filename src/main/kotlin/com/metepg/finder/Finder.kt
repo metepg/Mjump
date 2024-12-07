@@ -17,20 +17,9 @@ interface Finder {
     fun input(e: Editor, c: Char, lastMarks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark>?
 
     /**
-     * @return Return the marks whose start character is removed.
-     */
-    fun advanceMarks(c: Char, marks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark> {
-        return marks.filter { it.keyTag[it.advanceIndex] == c }
-            .map {
-                MarksCanvas.Mark(it.keyTag, it.offset, it.advanceIndex + 1)
-            }
-            .toList()
-    }
-
-    /**
      * @return Return the marks with the start character removed and the editors they belong to.
      */
-    fun advanceGlobalMarks(c: Char, marks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark> {
+    fun advanceMarks(c: Char, marks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark> {
         return marks.filter { it.keyTag[it.advanceIndex] == c }
             .map {
                 MarksCanvas.Mark(it.keyTag, it.offset, it.advanceIndex + 1, editor = it.editor)

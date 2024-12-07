@@ -7,7 +7,7 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import com.metepg.UserConfig.DataBean
 
-@State(name = "KJump", storages = [Storage("KJump.xml")])
+@State(name = "MJump", storages = [Storage("MJump.xml")])
 class UserConfig : PersistentStateComponent<DataBean> {
     private val dataBean = DataBean()
     override fun getState(): DataBean {
