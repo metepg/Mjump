@@ -2,6 +2,7 @@ package com.werfad
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.colors.EditorFontType
+import com.intellij.ui.JBColor
 import com.werfad.UserConfig.DataBean
 import com.werfad.utils.offsetToXYCompat
 import java.awt.*
@@ -42,7 +43,7 @@ class MarksCanvas : JComponent() {
         mMarks.zip(coordinates)
             .sortedBy { it.second.x }
             .forEach {
-                g2d.color = Color(config.backgroundColor, true)
+                g2d.color = JBColor(Color(config.backgroundColor, true), Color(config.backgroundColor, true))
                 val keyTag = it.first.keyTag
                 val bounds = mFontMetrics.getStringBounds(keyTag.substring(it.first.advanceIndex), g).bounds
 
@@ -56,18 +57,18 @@ class MarksCanvas : JComponent() {
                         val midX = xInCanvas + bounds.width / 2
 
                         // first char
-                        g2d.color = Color(config.hit2Color0, true)
+                        g2d.color = JBColor(Color(config.hit2Color0, true), Color(config.hit2Color0, true))
                         g2d.drawString(keyTag[0].toString(), xInCanvas, yInCanvas)
 
                         // second char
-                        g2d.color = Color(config.hit2Color1, true)
+                        g2d.color = JBColor(Color(config.hit2Color1, true), Color(config.hit2Color1, true))
                         g2d.drawString(keyTag[1].toString(), midX, yInCanvas)
                     } else {
-                        g2d.color = Color(config.hit2Color1, true)
+                        g2d.color = JBColor(Color(config.hit2Color1, true), Color(config.hit2Color1, true))
                         g2d.drawString(keyTag[1].toString(), xInCanvas, yInCanvas)
                     }
                 } else {
-                    g2d.color = Color(config.hit1Color, true)
+                    g2d.color = JBColor(Color(config.hit1Color, true), Color(config.hit1Color, true))
                     g2d.drawString(keyTag[0].toString(), xInCanvas, yInCanvas)
                 }
             }

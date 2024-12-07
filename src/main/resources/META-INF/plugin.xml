@@ -8,7 +8,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.werfad.UserConfig"/>
-        <applicationConfigurable instance="com.werfad.KJumpConfigurable"/>
+        <applicationConfigurable instance="com.werfad.KJumpConfigurable" displayName="KJump"/>
     </extensions>
 
     <actions>
