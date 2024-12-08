@@ -5,28 +5,29 @@ import com.metepg.MarksCanvas
 import com.metepg.utils.getMarksFromAllEditors
 
 class Char2Finder : Finder {
-    private lateinit var state: InputState
+    private var state = InputState.ADD_CHAR1_TO_SEARCH
     private var firstChar: Char? = null
 
     override fun start(e: Editor): List<MarksCanvas.Mark>? {
-        state = InputState.WAIT_SEARCH_CHAR1
         return null
     }
 
-    override fun input(e: Editor, c: Char, lastMarks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark>? {
-        return when (state) {
-            InputState.WAIT_SEARCH_CHAR1 -> {
-                firstChar = c
-                state = InputState.WAIT_SEARCH_CHAR2
-                null
-            }
-            InputState.WAIT_SEARCH_CHAR2 -> {
-                val first = firstChar ?: throw IllegalStateException("First character is not set.")
-                val pattern = Regex(Regex.escape("$first$c"), RegexOption.IGNORE_CASE)
-                state = InputState.WAIT_KEY
-                e.project.getMarksFromAllEditors(pattern)
-            }
-            InputState.WAIT_KEY -> advanceMarks(c, lastMarks)
-        }
+    override fun input(e: Editor, c: Char, lastMarks: List<MarksCanvas.Mark>): List<MarksCanvas.Mark>? = when (state) {
+        InputState.ADD_CHAR1_TO_SEARCH -> addChar1ToSearch(c)
+        InputState.ADD_CHAR2_TO_SEARCH -> addChar2ToSearch(e, c)
+        InputState.SHOW_MARKS -> advanceMarks(c, lastMarks)
+    }
+
+    private fun addChar1ToSearch(c: Char): List<MarksCanvas.Mark>? {
+        firstChar = c
+        state = InputState.ADD_CHAR2_TO_SEARCH
+        return null
+    }
+
+    private fun addChar2ToSearch(e: Editor, c: Char): List<MarksCanvas.Mark> {
+        val first = firstChar ?: throw IllegalStateException("First character is not set.")
+        val pattern = Regex(Regex.escape("$first$c"), RegexOption.IGNORE_CASE)
+        state = InputState.SHOW_MARKS
+        return e.project.getMarksFromAllEditors(pattern)
     }
 }
