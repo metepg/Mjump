@@ -5,9 +5,10 @@ import com.metepg.MarksCanvas
 import com.metepg.utils.getMarksFromAllEditors
 
 class Word1Finder : Finder {
-    private var state = InputState.ADD_CHAR1_TO_SEARCH
+    private lateinit var state: InputState
 
     override fun start(e: Editor): List<MarksCanvas.Mark>? {
+        state = InputState.ADD_CHAR1_TO_SEARCH
         return null
     }
 
