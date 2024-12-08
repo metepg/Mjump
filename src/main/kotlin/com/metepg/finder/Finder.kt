@@ -1,7 +1,6 @@
 package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
-import com.intellij.openapi.util.TextRange
 import com.metepg.MarksCanvas
 
 interface Finder {
@@ -9,7 +8,7 @@ interface Finder {
      * @return null - need more input to locate.
      *         not null - can be locate some data, empty represent without any matches.
      */
-    fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark>?
+    fun start(e: Editor): List<MarksCanvas.Mark>?
 
     /**
      * @return same with [.start]

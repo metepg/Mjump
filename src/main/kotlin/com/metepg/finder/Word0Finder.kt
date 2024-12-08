@@ -1,14 +1,13 @@
 package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
-import com.intellij.openapi.util.TextRange
 import com.metepg.MarksCanvas
 import com.metepg.utils.getMarksFromAllEditors
 
 private val pattern = Regex("(?i)\\b\\w")
 
 class Word0Finder : Finder {
-    override fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark> {
+    override fun start(e: Editor): List<MarksCanvas.Mark> {
         return e.project.getMarksFromAllEditors(pattern)
     }
 

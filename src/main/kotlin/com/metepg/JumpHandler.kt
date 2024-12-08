@@ -7,7 +7,6 @@ import com.intellij.openapi.editor.Caret
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.actionSystem.*
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory
-import com.intellij.openapi.util.TextRange
 import com.metepg.finder.*
 
 object JumpHandler : TypedActionHandler {
@@ -121,7 +120,7 @@ object JumpHandler : TypedActionHandler {
             JumpMode.WORD1 -> Word1Finder()
             JumpMode.LINE -> LineFinder()
         }
-        val marks = finder.start(editor, "", TextRange.EMPTY_RANGE)
+        val marks = finder.start(editor)
         if (marks != null) {
             lastMarks = marks
             jumpOrShowCanvas(lastMarks)

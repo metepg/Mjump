@@ -1,14 +1,13 @@
 package com.metepg.finder
 
 import com.intellij.openapi.editor.Editor
-import com.intellij.openapi.util.TextRange
 import com.metepg.MarksCanvas
 import com.metepg.utils.getMarksFromAllEditors
 
 class Char1Finder: Finder {
     private lateinit var state: InputState
 
-    override fun start(e: Editor, s: String, visibleRange: TextRange): List<MarksCanvas.Mark>? {
+    override fun start(e: Editor): List<MarksCanvas.Mark>? {
         state = InputState.WAIT_SEARCH_CHAR1
         return null
     }
