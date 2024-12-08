@@ -1,30 +1,27 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.werfad</id>
-    <name>KJump</name>
-    <vendor url="https://github.com/a690700752/KJump">a690700752</vendor>
+    <id>com.metepg</id>
+    <name>MJump</name>
+    <vendor url="https://github.com/metepg/MJump">metepg</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.werfad.UserConfig"/>
-        <applicationConfigurable instance="com.werfad.KJumpConfigurable"/>
+        <applicationService serviceImplementation="com.metepg.UserConfig"/>
+        <applicationConfigurable instance="com.metepg.MJumpConfigurable" displayName="MJump"/>
     </extensions>
 
     <actions>
-        <action id="KJumpAction" class="com.werfad.KJumpAction" text="KJump"
+        <action id="MJumpAction.Char1" class="com.metepg.Char1Action" text="MJump Char 1"
                 description="Input 1 character and jump to any same character."/>
-        <action id="KJumpAction.Char2" class="com.werfad.Char2Action" text="KJump Char 2"
+        <action id="MJumpAction.Char2" class="com.metepg.Char2Action" text="MJump Char 2"
                 description="Input 2 character and jump to any same character."/>
-        <action id="KJumpAction.Word0" class="com.werfad.Word0Action" text="KJump Word 0"
+        <action id="MJumpAction.Word0" class="com.metepg.Word0Action" text="MJump Word 0"
                 description="Jump to any word."/>
-        <action id="KJumpAction.Word1" class="com.werfad.Word1Action" text="KJump Word 1"
+        <action id="MJumpAction.Word1" class="com.metepg.Word1Action" text="MJump Word 1"
                 description="Input 1 character and jump to any word start with this character."/>
-        <action id="KJumpAction.Line" class="com.werfad.LineAction" text="KJump Line"
+        <action id="MJumpAction.Line" class="com.metepg.LineAction" text="MJump Line"
                 description="Jump to any line."/>
-        <action id="KJumpAction.Word1GotoDeclaration" class="com.werfad.GotoDeclarationWord1Action"
-                text="KJump Word 1 Goto Declaration"
-                description="Input 1 character and jump to declaration of any word start with this character."/>
     </actions>
 
 </idea-plugin>
