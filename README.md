@@ -10,9 +10,8 @@ A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. MJum
 [//]: # ([![Downloads]&#40;https://img.shields.io/jetbrains/plugin/d/15097-MJump.svg&#41;]&#40;https://plugins.jetbrains.com/plugin/15097-MJump&#41;)
 
 # IMPORTANT!
-- This is not my plugin. All rights and credit belong to github user `a690700752` for this amazing plugin.
-- The original repository is at `https://github.com/a690700752/KJump` and is still maintained.
-- I only use this plugin as a starter template for my own learning.
+- This is NOT my plugin. All rights and credit belong to github user `a690700752` for this amazing plugin.
+- The official and original repository is at `https://github.com/a690700752/KJump` and is still maintained.
 - Currently the only difference to KJump is that MJump is able to do the jumping across all open editors.
 
 ## Features
@@ -23,13 +22,14 @@ A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. MJum
 - IdeaVim integration: Works seamlessly with IdeaVim
 - Minimal keystrokes: Reach your target with just a few keystrokes
 
-## Installation (not implemented yet)
+## Installation (manual)
 
 1. Open your JetBrains IDE
-2. Go to `Settings/Preferences → Plugins`
-3. Click on `Marketplace`
-4. Search for "MJump"
-5. Click `Install`
+2. Run `gradle buildPlugin`
+3. Go to `Settings/Preferences → Plugins`
+4. Click on `Settings` (gear icon)
+5. Select "Install Plugin from Disk.."
+6. Navigate to `build/distributions` and select the `MJump-{version}.zip`
 
 ## Usage
 
@@ -83,5 +83,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Inspired by [vim-EasyMotion](https://github.com/easymotion/vim-easymotion)
-- Thanks to all contributors who have helped this project
+- Inspired by [vim-EasyMotion](https://github.com/easymotion/vim-easymotion) and [KJump](https://github.com/easymotion/vim-easymotion)
