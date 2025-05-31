@@ -12,7 +12,8 @@ A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. MJum
 # IMPORTANT!
 - This is NOT my plugin. All rights and credit belong to github user `a690700752` for this amazing plugin.
 - The official and original repository is at `https://github.com/a690700752/KJump` and is still maintained.
-- Currently the only difference to KJump is that MJump is able to do the jumping across all open editors.
+- Currently the only differences to KJump is that MJump is able to do the jumping across all open editors and is compatible with new IntelliJ versions.
+- Since I actively use this plugin, I’ll keep it updated to fix bugs and ensure compatibility with future IntelliJ releases.
 
 ## Features
 
@@ -21,15 +22,6 @@ A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. MJum
 - Line jumping: Quickly navigate to any line
 - IdeaVim integration: Works seamlessly with IdeaVim
 - Minimal keystrokes: Reach your target with just a few keystrokes
-
-## Installation (manual)
-
-1. Open your JetBrains IDE
-2. Run `gradle buildPlugin`
-3. Go to `Settings/Preferences → Plugins`
-4. Click on `Settings` (gear icon)
-5. Select "Install Plugin from Disk.."
-6. Navigate to `build/distributions` and select the `MJump-{version}.zip`
 
 ## Usage
 
