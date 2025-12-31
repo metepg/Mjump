@@ -10,9 +10,8 @@ A powerful navigation plugin ported from vim-EasyMotion for JetBrains IDEs. MJum
 [//]: # ([![Downloads]&#40;https://img.shields.io/jetbrains/plugin/d/15097-MJump.svg&#41;]&#40;https://plugins.jetbrains.com/plugin/15097-MJump&#41;)
 
 # IMPORTANT!
-- This is NOT my plugin. All rights and credit belong to github user `a690700752` for this amazing plugin.
-- The official and original repository is at `https://github.com/a690700752/KJump` and is still maintained.
-- Currently the only differences to KJump is that MJump is able to do the jumping across all open editors and is compatible with new IntelliJ versions.
+- This project is a **fork** of the original plugin found at [https://github.com/a690700752/KJump](https://github.com/a690700752/KJump).
+- Currently the only difference to KJump is that MJump is able to do the jumping across all open editors (tabs).
 - Since I actively use this plugin, I’ll keep it updated to fix bugs and ensure compatibility with future IntelliJ releases.
 
 ## Features
